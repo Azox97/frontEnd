@@ -7,11 +7,13 @@ btnDelete.addEventListener("click",fetchDeleteProduct);
 async function fetchDeleteProduct() {
 	const idField = document.getElementById("txtId").value;
 	const nameField = document.getElementById("txtName").value;
-	const priceField = document.getElementById("txtPrice").value;
-	const categoryField = document.getElementById("txtCategory").value;
-	console.log(nameField + " " + priceField + " " + categoryField);
+	const surnameField = document.getElementById("txtSurname").value;
+	const ageField = document.getElementById("txtAge").value;
+  const positionField = document.getElementById("txtPosition").value;
+  const teamField = document.getElementById("txtTeam").value;
+	console.log(nameField + " " + surnameField + " " + ageField + " " + positionField + " " + teamField);
 	
-	const newProduct = {name: nameField, price: priceField, category:categoryField};
+	const newProduct = {name: nameField, surname: surnameField, category:categoryField};
 	
     const response = await fetch(
       "https://rest-atlas-test.herokuapp.com/products/" + idField + "?_method=DELETE",
@@ -36,13 +38,15 @@ async function fetchDeleteProduct() {
 
 
 async function fetchEditProduct() {
-	const idField = document.getElementById("txtId").value;
+  const idField = document.getElementById("txtId").value;
 	const nameField = document.getElementById("txtName").value;
-	const priceField = document.getElementById("txtPrice").value;
-	const categoryField = document.getElementById("txtCategory").value;
-	console.log(nameField + " " + priceField + " " + categoryField);
+	const surnameField = document.getElementById("txtSurname").value;
+	const ageField = document.getElementById("txtAge").value;
+  const positionField = document.getElementById("txtPosition").value;
+  const teamField = document.getElementById("txtTeam").value;
+  console.log(nameField + " " + surnameField + " " + ageField + " " + positionField + " " + teamField);
 	
-	const newProduct = {name: nameField, price: priceField, category:categoryField};
+	const newProduct = {name: nameField, surname: surnameField, category:categoryField};
 	
     const response = await fetch(
       "https://rest-atlas-test.herokuapp.com/products/" + idField + "?_method=PUT",
@@ -87,7 +91,7 @@ async function fetchProduct(id) {
 		 
 		 if (product != null){
 			document.getElementById("txtName").value = product.name;      
-			document.getElementById("txtPrice").value = product.price;      
+			document.getElementById("txtsurname").value = product.surname;      
 			document.getElementById("txtCategory").value = product.category;
 		 }
 	  

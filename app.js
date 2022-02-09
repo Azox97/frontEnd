@@ -8,10 +8,10 @@ function append(parent, el) {
 
 
 const btnNew = document.getElementById("btnNew2");
-//btnNew.addEventListener("click",fetchCreateProduct);
+btnNew.addEventListener("click",fetchCreateProduct);
 
 
-/*async function fetchCreateProduct() {
+async function fetchCreateProduct() {
 	const newProduct = { "name": "miguel", "price": 25.5, "category":"vegetable"};
     const response = await fetch(
       "https://rest-atlas-test.herokuapp.com/Players",
@@ -31,7 +31,7 @@ const btnNew = document.getElementById("btnNew2");
         
       })
       .catch((error) => console.log(error));
-  }*/
+  }
 
 async function fetchPlayers() {
     const response = await fetch(
@@ -49,7 +49,6 @@ async function fetchPlayers() {
         console.log(data);
         const ul = document.getElementById('Players');
         let Players = data;
-        //console.log(Players);
         
         for(let player of Players){
             let li = createNode('li');
