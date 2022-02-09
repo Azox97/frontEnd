@@ -8,7 +8,7 @@ function append(parent, el) {
 
 
 const btnNew = document.getElementById("btnNew2");
-btnNew.addEventListener("click",fetchCreateProduct);
+//btnNew.addEventListener("click",fetchCreateProduct);
 
 
 /*async function fetchCreateProduct() {
