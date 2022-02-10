@@ -13,7 +13,7 @@ async function fetchDeletePlayers() {
   const teamField = document.getElementById("txtTeam").value;
 	console.log(nameField + " " + surnameField + " " + ageField + " " + positionField + " " + teamField);
 	
-	const newPlayer = {name: nameField, surname: surnameField, category:categoryField};
+	const newPlayer = {name: nameField, surname: surnameField, age: ageField, position: positionField, team: teamField};
 	
     const response = await fetch(
       "https://rest-atlas-test.herokuapp.com/products/" + idField + "?_method=DELETE",
@@ -46,7 +46,7 @@ async function fetchEditPlayers() {
   const teamField = document.getElementById("txtTeam").value;
   console.log(nameField + " " + surnameField + " " + ageField + " " + positionField + " " + teamField);
 	
-	const newPlayer = {name: nameField, surname: surnameField, category:categoryField};
+	const newPlayer = {name: nameField, surname: surnameField, age: ageField, position: positionField, team: teamField};
 	
     const response = await fetch(
       "https://players-cea.herokuapp.com/Players/" + idField + "?_method=PUT",
