@@ -1,10 +1,10 @@
 const btnEdit = document.getElementById("btnEdit");
-btnEdit.addEventListener("click",fetchEditProduct);
+btnEdit.addEventListener("click",fetchEditPlayers);
 
 const btnDelete = document.getElementById("btnDelete");
-btnDelete.addEventListener("click",fetchDeleteProduct);
+btnDelete.addEventListener("click",fetchDeletePlayers);
 
-async function fetchDeleteProduct() {
+async function fetchDeletePlayers() {
 	const idField = document.getElementById("txtId").value;
 	const nameField = document.getElementById("txtName").value;
 	const surnameField = document.getElementById("txtSurname").value;
@@ -13,7 +13,7 @@ async function fetchDeleteProduct() {
   const teamField = document.getElementById("txtTeam").value;
 	console.log(nameField + " " + surnameField + " " + ageField + " " + positionField + " " + teamField);
 	
-	const newProduct = {name: nameField, surname: surnameField, category:categoryField};
+	const newPlayer = {name: nameField, surname: surnameField, category:categoryField};
 	
     const response = await fetch(
       "https://rest-atlas-test.herokuapp.com/products/" + idField + "?_method=DELETE",
@@ -23,7 +23,7 @@ async function fetchDeleteProduct() {
           Accept: "application/json",
           "Content-Type": "application/json"
         },
-		body: JSON.stringify(newProduct)
+		body: JSON.stringify(newPlayer)
       }
     )
       .then((res) => res.json())
@@ -37,7 +37,7 @@ async function fetchDeleteProduct() {
 
 
 
-async function fetchEditProduct() {
+async function fetchEditPlayers() {
   const idField = document.getElementById("txtId").value;
 	const nameField = document.getElementById("txtName").value;
 	const surnameField = document.getElementById("txtSurname").value;
@@ -46,17 +46,17 @@ async function fetchEditProduct() {
   const teamField = document.getElementById("txtTeam").value;
   console.log(nameField + " " + surnameField + " " + ageField + " " + positionField + " " + teamField);
 	
-	const newProduct = {name: nameField, surname: surnameField, category:categoryField};
+	const newPlayer = {name: nameField, surname: surnameField, category:categoryField};
 	
     const response = await fetch(
-      "https://rest-atlas-test.herokuapp.com/products/" + idField + "?_method=PUT",
+      "https://players-cea.herokuapp.com/Players/" + idField + "?_method=PUT",
       {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json"
         },
-		body: JSON.stringify(newProduct)
+		body: JSON.stringify(newPlayer)
       }
     )
       .then((res) => res.json())
