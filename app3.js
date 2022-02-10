@@ -16,7 +16,7 @@ async function fetchDeletePlayers() {
 	const newPlayer = {name: nameField, surname: surnameField, age: ageField, position: positionField, team: teamField};
 	
     const response = await fetch(
-      "https://rest-atlas-test.herokuapp.com/products/" + idField + "?_method=DELETE",
+      "https://players-cea.herokuapp.com/Players/" + idField + "?_method=DELETE",
       {
         method: "POST",
         headers: {
