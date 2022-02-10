@@ -71,7 +71,7 @@ async function fetchEditProduct() {
 
 async function fetchProduct(id) {
     const response = await fetch(
-      "https://players-cea.herokuapp.com/Players" + id,
+      "https://players-cea.herokuapp.com/Players/" + id,
       {		
         method: "GET",
 		headers: {
