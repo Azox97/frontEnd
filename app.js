@@ -14,7 +14,7 @@ btnNew.addEventListener("click",fetchCreateProduct);
 async function fetchCreateProduct() {
 	const newProduct = { "name": "miguel", "price": 25.5, "category":"vegetable"};
     const response = await fetch(
-      "https://rest-atlas-test.herokuapp.com/Players",
+      "https://rest-atlas-test.herokuapp.com/",
       {				
         method: "POST",
         headers: {
