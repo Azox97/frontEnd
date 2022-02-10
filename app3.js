@@ -71,7 +71,7 @@ async function fetchEditProduct() {
 
 async function fetchProduct(id) {
     const response = await fetch(
-      "https://rest-atlas-test.herokuapp.com/products/" + id,
+      "https://players-cea.herokuapp.com/Players" + id,
       {		
         method: "GET",
 		headers: {
@@ -83,16 +83,18 @@ async function fetchProduct(id) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-	let product = data;
+	let player = data;
 	
 	 try {
 		 
 		 document.getElementById("txtId").value = id;
 		 
-		 if (product != null){
-			document.getElementById("txtName").value = product.name;      
-			document.getElementById("txtsurname").value = product.surname;      
-			document.getElementById("txtCategory").value = product.category;
+		 if (player != null){
+      document.getElementById("txtName").value = player.name;
+      document.getElementById("txtSurname").value = player.surname;
+      document.getElementById("txtAge").value = player.age;
+      document.getElementById("txtPosition").value = player.position;
+      document.getElementById("txtTeam").value = player.team;
 		 }
 	  
 	}
