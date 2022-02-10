@@ -14,7 +14,7 @@ async function fetchCreateProduct() {
 	const newPlayer = {name: nameField, surname: surnameField, age: ageField, position: positionField, team: teamField};
 	
     const response = await fetch(
-      "https://rest-atlas-test.herokuapp.com/Players",
+      "https://rest-atlas-test.herokuapp.com/",
       {
         method: "POST",
         headers: {
